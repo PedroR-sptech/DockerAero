@@ -10,6 +10,9 @@ WORKDIR /usr/src/app
 # Clona o repositório diretamente no container
 RUN git clone https://github.com/AeroData01/Projeto-AeroData.git
 
+# Define o diretório de trabalho para a pasta onde está o código (caso necessário)
+WORKDIR /usr/src/app/Projeto-AeroData/web-data-viz
+
 # Cria o arquivo .env com as variáveis
 RUN echo "AMBIENTE_PROCESSO=producao\n\
 DB_HOST=localhost\n\
@@ -18,7 +21,7 @@ DB_USER=admin\n\
 DB_PASSWORD=urubu100\n\
 DB_PORT=3306\n\
 APP_PORT=8080\n\
-APP_HOST=localhost" > /usr/src/app/.env
+APP_HOST=localhost" > /usr/src/app/Projeto-AeroData/web-data-viz/.env
 
 # Instala as dependências do projeto
 RUN npm install
