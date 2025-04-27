@@ -10,6 +10,9 @@ WORKDIR /usr/src/app
 # Clona o repositório diretamente no container
 RUN git clone https://github.com/AeroData01/Projeto-AeroData.git
 
+# Navega para o diretório do repositório clonado
+WORKDIR /Projeto-AeroData
+
 # Atualiza o repositório para garantir que temos a versão mais recente
 RUN git pull
 
